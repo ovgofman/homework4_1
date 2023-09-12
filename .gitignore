@@ -1,5 +1,6 @@
 # Folder
-ebin
+priv
+ct_run.ct@*
 
 # Hidden folder
 .erlang.mk
@@ -8,6 +9,7 @@ ebin
 
 # Files
 Makefile
+ebin/test
 *.beam
 *.d
 *.iml
