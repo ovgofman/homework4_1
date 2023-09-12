@@ -14,6 +14,7 @@
 -import(lesson2_task15, [replicate/2]).
 
 -include_lib("eunit/include/eunit.hrl").
+-include_lib("homework4_1/include/macros.hrl").
 
 -ifdef(TEST).
 replicate_test_() -> [
@@ -21,7 +22,6 @@ replicate_test_() -> [
   ?_assert(replicate([a], 3) =:= [a,a,a]),
   ?_assert(replicate([a], 1) =:= [a]),
   ?_assert(replicate([a], 0) =:= []),
-  ?_assert(replicate([a], -1) =:= []),
-  ?_assert(replicate([a], -1) =:= [])
+  ?_assert(replicate([a], ?Min) =:= [])
 ].
 -endif.

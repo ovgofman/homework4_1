@@ -14,12 +14,13 @@
 -import(lesson2_task03, [element_at/2]).
 
 -include_lib("eunit/include/eunit.hrl").
+-include_lib("homework4_1/include/macros.hrl").
 
 -ifdef(TEST).
 element_at_test_() -> [
   ?_assert(element_at([1, 2, 3], 0) =:= 1),
   ?_assert(element_at([1, 2, 3], 2) =:= 3),
-  ?_assert(element_at([1, 2, 3], 4) =:= []),
-  ?_assert(element_at([1, 2, 3], -1) =:= [])
+  ?_assert(element_at([1, 2, 3], ?Max) =:= []),
+  ?_assert(element_at([1, 2, 3], ?Min) =:= [])
 ].
 -endif.
