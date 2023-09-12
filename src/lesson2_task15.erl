@@ -26,6 +26,7 @@ replicate(L, N) ->
 %% f(E, 2) -> [E, E]
 times(E, N) ->
   if
+    N < 1 -> [];
     N > 1 -> [E | times(E, N - 1)];
     true -> [E]
   end.

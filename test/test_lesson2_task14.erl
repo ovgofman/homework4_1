@@ -1,4 +1,4 @@
-1%%%-------------------------------------------------------------------
+%%%-------------------------------------------------------------------
 %%% @author alex
 %%% @copyright (C) 2023, <COMPANY>
 %%% @doc
@@ -11,13 +11,13 @@
 
 %% API
 -export([]).
+-import(lesson2_task14, [duplicate/1]).
 
 -include_lib("eunit/include/eunit.hrl").
 
 -ifdef(TEST).
-last_test_() -> [
-  ?_assert(last([1, 2, 3]) =:= 3),
-  ?_assert(last([1]) =:= 1),
-  ?_assert(last([]) =:= [])
+duplicate_test_() -> [
+  ?_assert(duplicate([a,b,c,c,d]) =:= [a,a,b,b,c,c,c,c,d,d]),
+  ?_assert(duplicate([a]) =:= [a,a])
 ].
 -endif.

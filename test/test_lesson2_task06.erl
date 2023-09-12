@@ -11,13 +11,16 @@
 
 %% API
 -export([]).
+-import(lesson2_task06, [is_palindrome/1]).
 
 -include_lib("eunit/include/eunit.hrl").
 
 -ifdef(TEST).
-last_test_() -> [
-  ?_assert(last([1, 2, 3]) =:= 3),
-  ?_assert(last([1]) =:= 1),
-  ?_assert(last([]) =:= [])
+is_palindrome_test_() -> [
+  ?_assert(is_palindrome([1, 2, 3, 2, 1]) =:= true),
+  ?_assert(is_palindrome([1, 2, 2, 1]) =:= true),
+  ?_assert(is_palindrome([1, 2, 2]) =:= false),
+  ?_assert(is_palindrome([1, 2]) =:= false),
+  ?_assert(is_palindrome([1]) =:= false)
 ].
 -endif.

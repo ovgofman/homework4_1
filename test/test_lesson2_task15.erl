@@ -11,13 +11,17 @@
 
 %% API
 -export([]).
+-import(lesson2_task15, [replicate/2]).
 
 -include_lib("eunit/include/eunit.hrl").
 
 -ifdef(TEST).
-last_test_() -> [
-  ?_assert(last([1, 2, 3]) =:= 3),
-  ?_assert(last([1]) =:= 1),
-  ?_assert(last([]) =:= [])
+replicate_test_() -> [
+  ?_assert(replicate([a, b, c], 3) =:= [a,a,a,b,b,b,c,c,c]),
+  ?_assert(replicate([a], 3) =:= [a,a,a]),
+  ?_assert(replicate([a], 1) =:= [a]),
+  ?_assert(replicate([a], 0) =:= []),
+  ?_assert(replicate([a], -1) =:= []),
+  ?_assert(replicate([a], -1) =:= [])
 ].
 -endif.

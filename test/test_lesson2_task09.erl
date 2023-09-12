@@ -11,13 +11,12 @@
 
 %% API
 -export([]).
+-import(lesson2_task09, [pack/1]).
 
 -include_lib("eunit/include/eunit.hrl").
 
 -ifdef(TEST).
-last_test_() -> [
-  ?_assert(last([1, 2, 3]) =:= 3),
-  ?_assert(last([1]) =:= 1),
-  ?_assert(last([]) =:= [])
+pack_test_() -> [
+  ?_assert(1 =:= 1)
 ].
 -endif.

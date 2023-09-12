@@ -11,13 +11,14 @@
 
 %% API
 -export([]).
+-import(lesson2_task13, [decode/1]).
 
 -include_lib("eunit/include/eunit.hrl").
 
 -ifdef(TEST).
-last_test_() -> [
-  ?_assert(last([1, 2, 3]) =:= 3),
-  ?_assert(last([1]) =:= 1),
-  ?_assert(last([]) =:= [])
+decode_test_() -> [
+  ?_assert(decode([{4,a},{1,b},{2,c},{2,a},{1,d},{4,e}]) =:= [a,a,a,a,b,c,c,a,a,d,e,e,e,e]),
+  ?_assert(decode([{1,b}]) =:= [b]),
+  ?_assert(decode([{4,a}]) =:= [a,a,a,a])
 ].
 -endif.
