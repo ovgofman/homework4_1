@@ -1,0 +1,15 @@
+# Folder
+ebin
+
+# Hidden folder
+.erlang.mk
+.git
+.idea
+
+# Files
+Makefile
+*.beam
+*.d
+*.iml
+*.mk
+*.swp
